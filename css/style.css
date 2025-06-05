@@ -1,0 +1,263 @@
+/* =========================
+   云图测绘公司官网主样式表
+   ========================= */
+
+/* -------- 全局基础样式 -------- */
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: #f7f9fb;    /* 网站浅色背景，提升专业感 */
+  color: #232b34;         /* 主要字体颜色 */
+  line-height: 1.6;
+}
+
+/* 链接基础样式：去下划线、增加动画 */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover { color: #19c6c8; }
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: none;
+}
+
+/* ------------------ 顶部导航样式 ------------------ */
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid #e5e8ec;
+  box-shadow: 0 1px 6px rgba(18,58,97,.04);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.container {
+  width: 92%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+
+/* LOGO样式 */
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.6em;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #123a61;
+}
+.logo img {
+  height: 38px;
+  margin-right: 12px;
+}
+
+/* 导航菜单 */
+.main-nav a {
+  margin-left: 36px;
+  color: #123a61;
+  font-size: 1.1em;
+  position: relative;
+  padding-bottom: 2px;
+}
+.main-nav a.active,
+.main-nav a:hover {
+  color: #19c6c8;
+  border-bottom: 2px solid #19c6c8;
+}
+
+/* ---------------- Banner大图及内容 ---------------- */
+.banner {
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+  max-height: 640px;
+  overflow: hidden;
+  background: #eaf1fa; /* 若图片未加载，背景淡蓝 */
+}
+.banner img {
+  width: 100%;
+  min-height: 420px;
+  object-fit: cover;
+  filter: brightness(0.96);
+}
+.banner-content {
+  position: absolute;
+  left: 5%;
+  top: 23%;
+  color: #fff;
+  background: rgba(24,56,110,0.32);  /* 半透明背景，提升文字可读性 */
+  border-radius: 18px;
+  padding: 2.5em 3.2em 2.5em 2.3em;
+  max-width: 470px;
+  box-shadow: 0 2px 24px rgba(24,56,110,.10);
+  backdrop-filter: blur(2px);
+}
+.banner-content h1 {
+  font-size: 2.2em;
+  margin-bottom: .7em;
+  color: #fff;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+.banner-content p {
+  font-size: 1.1em;
+  margin-bottom: 2em;
+  color: #f0f6ff;
+}
+.btn-primary {
+  display: inline-block;
+  background: linear-gradient(90deg, #347bf6 60%, #19c6c8 100%);
+  color: #fff;
+  border-radius: 6px;
+  padding: 0.9em 2.5em;
+  font-size: 1.08em;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(52,123,246,0.12);
+}
+.btn-primary:hover {
+  background: #1b63c5;
+}
+
+/* ---------------- 区块/标题/卡片统一样式 ---------------- */
+/* 内容区统一外观 */
+.section {
+  margin: 52px auto 0 auto;
+  padding: 38px 0 26px 0;
+  background: #f8fafc;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(50,90,150,0.04);
+}
+/* 标题居中 */
+.section h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 1.2em;
+  color: #123a61;
+  letter-spacing: 2px;
+}
+
+/* ------- 所有卡片组统一用Flex布局 ------- */
+.card-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;  /* 卡片间隔 */
+  margin-top: 2em;
+}
+
+/* ------- 卡片基础样式 -------- */
+.card {
+  flex: 1 1 260px;        /* 基础宽度260px，响应式收缩 */
+  max-width: 350px;       /* 最大宽度350px，三卡/九卡一行 */
+  min-width: 260px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(100,120,150,0.08);
+  padding: 2em 1.6em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: box-shadow 0.2s, transform 0.2s;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+.card h3, .card h4 {
+  margin-bottom: .7em;
+  color: #19c6c8;
+  font-weight: 600;
+}
+.card p { color: #334c72; font-size: 1.06em; }
+
+/* 悬停效果 */
+.card:hover {
+  box-shadow: 0 8px 24px rgba(52,123,246,0.14);
+  transform: translateY(-6px) scale(1.025);
+}
+
+/* -------- 经典案例专用：带图片 -------- */
+.case-card {
+  padding: 0 0 1.3em 0;
+  overflow: hidden;
+  align-items: stretch;
+  min-height: 320px; /* 保证图片+文字高度统一 */
+}
+.case-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+  margin-bottom: 1.2em;
+}
+.case-card > div { padding: 0 1.1em; }
+.case-card h4 { margin-bottom: .45em; color: #19c6c8; font-size: 1.08em; }
+.case-card p { color: #4765a1; font-size: .98em; }
+
+/* --------- 经典案例区：每行最多3张卡片（保证九宫格） --------- */
+.cases .card-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 2em;
+}
+
+/* 只针对经典案例：每个卡片宽度按九宫格分布 */
+.cases .card, .cases .case-card {
+  flex: 1 1 260px;
+  max-width: 350px;
+  min-width: 260px;
+  box-sizing: border-box;
+}
+
+/* 只针对经典案例，让每行最多显示3个卡片 */
+.cases .card-group > .card,
+.cases .card-group > .case-card {
+  flex-basis: calc((100% - 64px) / 3); /* 3张卡片，两条gap=64px */
+}
+
+/* ------- 响应式布局：平板及以下变单列 ------- */
+@media (max-width: 1200px) {
+  .card { max-width: 29vw; min-width: 200px;}
+  .cases .card, .cases .case-card { max-width: 29vw; min-width: 200px;}
+}
+@media (max-width: 1000px) {
+  .card-group {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  .card, .case-card, .cases .card, .cases .case-card {
+    max-width: 97vw;
+    min-width: 0;
+    flex-basis: auto;
+  }
+}
+@media (max-width: 700px) {
+  .section { padding: 18px 0 10px 0; }
+  .banner-content {
+    position: static;
+    margin: 20px auto 0 auto;
+    width: 90vw;
+    max-width: 98vw;
+    background: rgba(24,56,110,0.32);
+  }
+}
+
+/* ------ 其它细节美化 ------ */
+::-webkit-scrollbar-thumb { background: #e3eaf1; border-radius: 6px; }
+::-webkit-scrollbar { background: #f8fafc; width: 8px; }
