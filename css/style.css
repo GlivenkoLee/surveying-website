@@ -95,8 +95,8 @@ img {
 }
 .banner-content {
   position: absolute;                        /* 绝对定位，覆盖在banner上 */
-  left: 5%;                                  /* 距左5% */
-  top: 23%;                                  /* 距顶23% */
+  left: 28%;                                  /* 距左5% */
+  top: 50%;                                  /* 距顶23% */
   color: #fff;                               /* 文字白色 */
   background: rgba(24,56,110,0.32);          /* 半透明深色背景，防止字看不清 */
   border-radius: 18px;                       /* 圆角 */
